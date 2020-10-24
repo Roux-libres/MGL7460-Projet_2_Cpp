@@ -9,4 +9,4 @@ set(CMAKE_CXX_COMPILER "C:/Users/1830542/Downloads/mingw/bin/g++.exe")
 project ("MGL7460_Projet_2_Cpp")
 
 # Incluez les sous-projets.
-add_subdirectory ("MGL7460_Projet_2_Cpp_CMake")
+add_subdirectory ("MGL7460_Projet_2_Cpp")
