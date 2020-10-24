@@ -1,5 +1,7 @@
 .vs
 Debug
+**/out
+
 
 # Prerequisites
 *.d
