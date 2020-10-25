@@ -1,7 +1,26 @@
 cmake_minimum_required (VERSION 3.8)
-add_subdirectory(${CMAKE_CURRENT_BINARY_DIR}/googletest-src
-                 ${CMAKE_CURRENT_BINARY_DIR}/googletest-build
-                 EXCLUDE_FROM_ALL)
-add_executable(test1 test.cpp)
-target_link_libraries(test1 ${GTEST_BOTH_LIBRARIES})
-add_test(test-1 test1)
+
+set(This Tests)
+set(Sources 
+	test.cpp
+)
+
+add_executable(${This} ${Sources})
+target_link_libraries(${This} PUBLIC
+	gtest
+	gtest_main
+	MGL7460_Projet_2_Cpp
+)
+
+add_test(
+	NAME ${This}
+	COMMAND ${This}
+)
+
+add_custom_command(
+     TARGET ${This}
+     COMMENT "Run tests"
+     POST_BUILD 
+     WORKING_DIRECTORY ${CMAKE_BINARY_DIR}
+     COMMAND ${CMAKE_CTEST_COMMAND} -C $<CONFIGURATION> -R "^${This}$" --output-on-failures -T Test --no-compress-output
+)
