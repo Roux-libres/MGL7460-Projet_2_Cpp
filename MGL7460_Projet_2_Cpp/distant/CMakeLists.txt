@@ -47,5 +47,6 @@ set(Sources
 )
 
 set(CMAKE_CXX_CPPCHECK "C:/Program Files/Cppcheck/cppcheck.exe;--enable=all;--inconclusive;--xml;--xml-version=2;C:/Users/1830542/.jenkins/workspace/MGL7460_Projet_2_Cpp/MGL7460_Projet_2_Cpp 2> C:/Users/1830542/.jenkins/workspace/MGL7460_Projet_2_Cpp/out/build/cppcheck.xml")
+set(CMAKE_CXX_CPPLINT "cpplint")
 
 add_library(MGL7460_Projet_2_Cpp STATIC ${Sources})
