@@ -49,11 +49,11 @@ set(Sources
 execute_process(COMMAND C:/Program Files/Cppcheck/cppcheck.exe --enable=all --inconclusive --xml --xml-version=2 C:/Users/1830542/.jenkins/workspace/MGL7460_Projet_2_Cpp/MGL7460_Projet_2_Cpp
                 OUTPUT_VARIABLE cppcheck)
 message("CPPCHECK RESULT : ${cppcheck}")
-# "C:/Users/1830542/.jenkins/workspace/MGL7460_Projet_2_Cpp/out/build/cppcheck.xml"
+file(WRITE C:/Users/1830542/.jenkins/workspace/MGL7460_Projet_2_Cpp/out/build/cppcheck.xml ${cppcheck})
 
 execute_process(COMMAND C:/Users/1830542/AppData/Local/Programs/Python/Python37/Scripts/cpplint.exe --recursive --output=vs7 --counting=detailed --extensions=cpp,h --exclude=C:/Users/1830542/.jenkins/workspace/MGL7460_Projet_2_Cpp/MGL7460_Projet_2_Cpp/packages C:/Users/1830542/.jenkins/workspace/MGL7460_Projet_2_Cpp/MGL7460_Projet_2_Cpp
                 RESULT_VARIABLE cpplint)
 message("CPPLINT RESULT : ${cpplint}")
-# 1> "C:/Users/1830542/.jenkins/workspace/MGL7460_Projet_2_Cpp/out/build/cpplint-cppcheck-result.txt" 2>&1
+file(WRITE C:/Users/1830542/.jenkins/workspace/MGL7460_Projet_2_Cpp/out/build/cpplint-cppcheck-result.txt ${cpplint})
 
 add_library(MGL7460_Projet_2_Cpp STATIC ${Sources})
