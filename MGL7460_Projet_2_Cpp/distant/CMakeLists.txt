@@ -54,5 +54,5 @@ add_custom_command(
      COMMENT "Run cppCheck"
      POST_BUILD
      WORKING_DIRECTORY ${CMAKE_BINARY_DIR}/../out/build
-     COMMAND "C:/Program Files/Cppcheck/cppcheck.exe" --enable=all --inconclusive --xml --xml-version=2 "C:\Users\1830542\.jenkins\workspace\MGL7460_Projet_2_Cpp\MGL7460_Projet_2_Cpp" 2> cppcheck.xml
+     COMMAND "C:/Program Files/Cppcheck/cppcheck.exe" --enable=all --inconclusive --xml --xml-version=2 "C:/Users/1830542/.jenkins/workspace/MGL7460_Projet_2_Cpp/MGL7460_Projet_2_Cpp" 2> cppcheck.xml
 )
