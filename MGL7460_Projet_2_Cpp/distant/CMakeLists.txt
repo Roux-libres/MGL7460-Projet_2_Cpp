@@ -38,21 +38,3 @@ set(Sources
 )
 
 add_library(MGL7460_Projet_2_Cpp STATIC ${Sources})
-
-add_custom_command(
-     TARGET MGL7460_Projet_2_Cpp
-     COMMENT "clean build"
-     PRE_BUILD
-     WORKING_DIRECTORY ${CMAKE_BINARY_DIR}/..
-     COMMAND rmdir /S /Q "C:/Users/1830542/.jenkins/workspace/MGL7460_Projet_2_Cpp/out"
-     COMMAND mkdir "C:/Users/1830542/.jenkins/workspace/MGL7460_Projet_2_Cpp/out"
-     COMMAND mkdir "C:/Users/1830542/.jenkins/workspace/MGL7460_Projet_2_Cpp/out/build"
-)
-
-add_custom_command(
-     TARGET MGL7460_Projet_2_Cpp
-     COMMENT "Run cppCheck"
-     POST_BUILD
-     WORKING_DIRECTORY ${CMAKE_BINARY_DIR}/../out/build
-     COMMAND "C:/Program Files/Cppcheck/cppcheck.exe" --enable=all --inconclusive --xml --xml-version=2 "C:/Users/1830542/.jenkins/workspace/MGL7460_Projet_2_Cpp/MGL7460_Projet_2_Cpp" 2> cppcheck.xml
-)
