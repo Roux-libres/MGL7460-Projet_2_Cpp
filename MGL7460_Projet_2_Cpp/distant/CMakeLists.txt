@@ -46,7 +46,7 @@ set(Sources
 	MGL7460_Projet_2_Cpp/MGL7460_Projet_2_Cpp.cpp
 )
 
-execute_process(COMMAND CMD "C:/Program Files/Cppcheck/cppcheck.exe" --enable=all --inconclusive --xml --xml-version=2 "C:/Users/1830542/.jenkins/workspace/MGL7460_Projet_2_Cpp/MGL7460_Projet_2_Cpp" 2> "C:/Users/1830542/.jenkins/workspace/MGL7460_Projet_2_Cpp/out/build/cppcheck.xml")
-execute_process(COMMAND CMD python "C:/Users/1830542/AppData/Local/Programs/Python/Python37/Lib/site-packages/cpplint.py" --recursive --output=vs7 --counting=detailed --extensions=cpp,h --exclude="C:/Users/1830542/.jenkins/workspace/MGL7460_Projet_2_Cpp/MGL7460_Projet_2_Cpp/packages" "C:/Users/1830542/.jenkins/workspace/MGL7460_Projet_2_Cpp/MGL7460_Projet_2_Cpp" 1> "C:/Users/1830542/.jenkins/workspace/MGL7460_Projet_2_Cpp/out/build/cpplint-cppcheck-result.txt" 2>&1)
+execute_process(COMMAND "C:/Program Files/Cppcheck/cppcheck.exe" --enable=all --inconclusive --xml --xml-version=2 "C:/Users/1830542/.jenkins/workspace/MGL7460_Projet_2_Cpp/MGL7460_Projet_2_Cpp" OUTPUT_DIRECTORY "C:/Users/1830542/.jenkins/workspace/MGL7460_Projet_2_Cpp/out/build/cppcheck.xml")
+execute_process(COMMAND python "C:/Users/1830542/AppData/Local/Programs/Python/Python37/Lib/site-packages/cpplint.py" --recursive --output=vs7 --counting=detailed --extensions=cpp,h --exclude="C:/Users/1830542/.jenkins/workspace/MGL7460_Projet_2_Cpp/MGL7460_Projet_2_Cpp/packages" "C:/Users/1830542/.jenkins/workspace/MGL7460_Projet_2_Cpp/MGL7460_Projet_2_Cpp" 1> "C:/Users/1830542/.jenkins/workspace/MGL7460_Projet_2_Cpp/out/build/cpplint-cppcheck-result.txt" 2>&1)
 
 add_library(MGL7460_Projet_2_Cpp STATIC ${Sources})
