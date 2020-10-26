@@ -8,6 +8,14 @@ set(CMAKE_CXX_COMPILER "C:/Users/1830542/Downloads/mingw/bin/g++.exe")
 
 project ("MGL7460_Projet_2_Cpp")
 
+add_custom_target(Clean_Project
+                  ALL
+                  COMMENT "Clean the project's build directory"
+                  WORKING_DIRECTORY ${CMAKE_BINARY_DIR}/..
+                  COMMAND rmdir /S /Q "C:/Users/1830542/.jenkins/workspace/MGL7460_Projet_2_Cpp/out"
+                  COMMAND mkdir "C:/Users/1830542/.jenkins/workspace/MGL7460_Projet_2_Cpp/out"
+                  COMMAND mkdir "C:/Users/1830542/.jenkins/workspace/MGL7460_Projet_2_Cpp/out/build")
+
 configure_file(CMakeLists.txt.in googletest-download/CMakeLists.txt)
 execute_process(COMMAND ${CMAKE_COMMAND} -G "${CMAKE_GENERATOR}" .
   RESULT_VARIABLE result
@@ -37,5 +45,7 @@ add_subdirectory(${CMAKE_CURRENT_BINARY_DIR}/googletest-src
 set(Sources
 	MGL7460_Projet_2_Cpp/MGL7460_Projet_2_Cpp.cpp
 )
+
+set(CMAKE_CXX_CPPCHECK "C:/Program Files/Cppcheck/cppcheck.exe --enable=all --inconclusive --xml --xml-version=2 C:/Users/1830542/.jenkins/workspace/MGL7460_Projet_2_Cpp/MGL7460_Projet_2_Cpp 2> C:/Users/1830542/.jenkins/workspace/MGL7460_Projet_2_Cpp/out/build/cppcheck.xml")
 
 add_library(MGL7460_Projet_2_Cpp STATIC ${Sources})
