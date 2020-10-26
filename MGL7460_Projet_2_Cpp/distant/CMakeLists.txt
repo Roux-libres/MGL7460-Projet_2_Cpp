@@ -50,18 +50,19 @@ execute_process(COMMAND C:/Program Files/Cppcheck/cppcheck.exe --enable=all --in
                 RESULT_VARIABLE cppcheck_result
                 OUTPUT_VARIABLE cppcheck_output
                 ERROR_VARIABLE cppcheck_error)
-message("CPPCHECK RESULT : ${cppcheck_result}")
-message("CPPCHECK OUTPUT : ${cppcheck_output}")
-message("CPPCHECK ERROR : ${cppcheck_error}")
-file(WRITE C:/Users/1830542/.jenkins/workspace/MGL7460_Projet_2_Cpp/out/build/cppcheck.xml ${cppcheck_result})
+#message("CPPCHECK RESULT : ${cppcheck_result}")
+#message("CPPCHECK OUTPUT : ${cppcheck_output}")
+#message("CPPCHECK ERROR : ${cppcheck_error}")
+file(WRITE C:/Users/1830542/.jenkins/workspace/MGL7460_Projet_2_Cpp/out/build/cppcheck.xml ${cppcheck_error})
 
 execute_process(COMMAND C:/Users/1830542/AppData/Local/Programs/Python/Python37/Scripts/cpplint.exe --recursive --output=vs7 --counting=detailed --extensions=cpp,h --exclude=C:/Users/1830542/.jenkins/workspace/MGL7460_Projet_2_Cpp/MGL7460_Projet_2_Cpp/packages C:/Users/1830542/.jenkins/workspace/MGL7460_Projet_2_Cpp/MGL7460_Projet_2_Cpp
                 RESULT_VARIABLE cpplint_result
                 OUTPUT_VARIABLE cpplint_output
                 ERROR_VARIABLE cpplint_error)
-message("CPPLINT RESULT : ${cpplint_result}")
-message("CPPLINT OUTPUT : ${cpplint_output}")
-message("CPPLINT ERROR : ${cpplint_error}")
-file(WRITE C:/Users/1830542/.jenkins/workspace/MGL7460_Projet_2_Cpp/out/build/cpplint-cppcheck-result.txt ${cpplint_result})
+#message("CPPLINT RESULT : ${cpplint_result}")
+#message("CPPLINT OUTPUT : ${cpplint_output}")
+#message("CPPLINT ERROR : ${cpplint_error}")
+file(WRITE C:/Users/1830542/.jenkins/workspace/MGL7460_Projet_2_Cpp/out/build/cpplint-cppcheck-result.txt ${cpplint_error})
+file(APPEND C:/Users/1830542/.jenkins/workspace/MGL7460_Projet_2_Cpp/out/build/cpplint-cppcheck-result.txt ${cpplint_output})
 
 add_library(MGL7460_Projet_2_Cpp STATIC ${Sources})
