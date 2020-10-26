@@ -8,13 +8,10 @@ set(CMAKE_CXX_COMPILER "C:/Users/1830542/Downloads/mingw/bin/g++.exe")
 
 project ("MGL7460_Projet_2_Cpp")
 
-add_custom_target(Clean_Project
-                  ALL
-                  COMMENT "Clean the project's build directory"
-                  WORKING_DIRECTORY ${CMAKE_BINARY_DIR}/..
-                  COMMAND rmdir /S /Q "C:/Users/1830542/.jenkins/workspace/MGL7460_Projet_2_Cpp/out"
-                  COMMAND mkdir "C:/Users/1830542/.jenkins/workspace/MGL7460_Projet_2_Cpp/out"
-                  COMMAND mkdir "C:/Users/1830542/.jenkins/workspace/MGL7460_Projet_2_Cpp/out/build")
+message("Cleaning the project's build directory")
+execute_process(COMMAND cmd rmdir /S /Q C:/Users/1830542/.jenkins/workspace/MGL7460_Projet_2_Cpp/out)
+execute_process(COMMAND cmd mkdir C:/Users/1830542/.jenkins/workspace/MGL7460_Projet_2_Cpp/out)
+execute_process(COMMAND cmd mkdir C:/Users/1830542/.jenkins/workspace/MGL7460_Projet_2_Cpp/out/build)
 
 configure_file(CMakeLists.txt.in googletest-download/CMakeLists.txt)
 execute_process(COMMAND ${CMAKE_COMMAND} -G "${CMAKE_GENERATOR}" .
@@ -46,14 +43,14 @@ set(Sources
 	MGL7460_Projet_2_Cpp/MGL7460_Projet_2_Cpp.cpp
 )
 
-execute_process(COMMAND C:/Program Files/Cppcheck/cppcheck.exe --enable=all --inconclusive --xml --xml-version=2 C:/Users/1830542/.jenkins/workspace/MGL7460_Projet_2_Cpp/MGL7460_Projet_2_Cpp
-                RESULT_VARIABLE cppcheck_result
-                OUTPUT_VARIABLE cppcheck_output
-                ERROR_VARIABLE cppcheck_error)
+execute_process(COMMAND C:/Program Files/Cppcheck/cppcheck.exe --enable=all --inconclusive --xml --xml-version=2 C:/Users/1830542/.jenkins/workspace/MGL7460_Projet_2_Cpp/MGL7460_Projet_2_Cpp 2> C:/Users/1830542/.jenkins/workspace/MGL7460_Projet_2_Cpp/out/build/cppcheck.xml)
+#                RESULT_VARIABLE cppcheck_result
+#                OUTPUT_VARIABLE cppcheck_output
+#                ERROR_VARIABLE cppcheck_error)
 #message("CPPCHECK RESULT : ${cppcheck_result}")
 #message("CPPCHECK OUTPUT : ${cppcheck_output}")
 #message("CPPCHECK ERROR : ${cppcheck_error}")
-file(WRITE C:/Users/1830542/.jenkins/workspace/MGL7460_Projet_2_Cpp/out/build/cppcheck.xml ${cppcheck_error})
+#file(WRITE C:/Users/1830542/.jenkins/workspace/MGL7460_Projet_2_Cpp/out/build/cppcheck.xml ${cppcheck_error})
 
 execute_process(COMMAND C:/Users/1830542/AppData/Local/Programs/Python/Python37/Scripts/cpplint.exe --recursive --output=vs7 --counting=detailed --extensions=cpp,h --exclude=C:/Users/1830542/.jenkins/workspace/MGL7460_Projet_2_Cpp/MGL7460_Projet_2_Cpp/packages C:/Users/1830542/.jenkins/workspace/MGL7460_Projet_2_Cpp/MGL7460_Projet_2_Cpp
                 RESULT_VARIABLE cpplint_result
