@@ -40,7 +40,7 @@ set(Sources
 add_library(MGL7460_Projet_2_Cpp STATIC ${Sources})
 
 add_custom_command(
-     TARGET ${This}
+     TARGET MGL7460_Projet_2_Cpp
      COMMENT "clean build"
      PRE_BUILD
      WORKING_DIRECTORY ${CMAKE_BINARY_DIR}/..
@@ -50,7 +50,7 @@ add_custom_command(
 )
 
 add_custom_command(
-     TARGET ${This}
+     TARGET MGL7460_Projet_2_Cpp
      COMMENT "Run cppCheck"
      POST_BUILD
      WORKING_DIRECTORY ${CMAKE_BINARY_DIR}/../out/build
