@@ -8,16 +8,6 @@ set(CMAKE_CXX_COMPILER "C:/Users/1830542/Downloads/mingw/bin/g++.exe")
 
 project ("MGL7460_Projet_2_Cpp")
 
-add_custom_command(
-     TARGET ${This}
-     COMMENT "clean build"
-     PRE_BUILD
-     WORKING_DIRECTORY ${CMAKE_BINARY_DIR}/..
-     COMMAND rmdir /S /Q "C:/Users/1830542/.jenkins/workspace/MGL7460_Projet_2_Cpp/out"
-     COMMAND mkdir "C:/Users/1830542/.jenkins/workspace/MGL7460_Projet_2_Cpp/out"
-     COMMAND mkdir "C:/Users/1830542/.jenkins/workspace/MGL7460_Projet_2_Cpp/out/build"
-)
-
 configure_file(CMakeLists.txt.in googletest-download/CMakeLists.txt)
 execute_process(COMMAND ${CMAKE_COMMAND} -G "${CMAKE_GENERATOR}" .
   RESULT_VARIABLE result
@@ -48,6 +38,16 @@ set(Sources
 )
 
 add_library(MGL7460_Projet_2_Cpp STATIC ${Sources})
+
+add_custom_command(
+     TARGET ${This}
+     COMMENT "clean build"
+     PRE_BUILD
+     WORKING_DIRECTORY ${CMAKE_BINARY_DIR}/..
+     COMMAND rmdir /S /Q "C:/Users/1830542/.jenkins/workspace/MGL7460_Projet_2_Cpp/out"
+     COMMAND mkdir "C:/Users/1830542/.jenkins/workspace/MGL7460_Projet_2_Cpp/out"
+     COMMAND mkdir "C:/Users/1830542/.jenkins/workspace/MGL7460_Projet_2_Cpp/out/build"
+)
 
 add_custom_command(
      TARGET ${This}
