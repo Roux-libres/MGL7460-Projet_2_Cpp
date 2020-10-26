@@ -43,14 +43,15 @@ set(Sources
 	MGL7460_Projet_2_Cpp/MGL7460_Projet_2_Cpp.cpp
 )
 
-execute_process(COMMAND C:/Program Files/Cppcheck/cppcheck.exe --enable=all --inconclusive --xml --xml-version=2 C:/Users/1830542/.jenkins/workspace/MGL7460_Projet_2_Cpp/MGL7460_Projet_2_Cpp
-                RESULT_VARIABLE cppcheck_result
-                OUTPUT_VARIABLE cppcheck_output
-                ERROR_VARIABLE cppcheck_error)
+execute_process(COMMAND C:/Program Files/Cppcheck/cppcheck.exe --enable=all --inconclusive --xml --xml-version=2 C:/Users/1830542/.jenkins/workspace/MGL7460_Projet_2_Cpp/MGL7460_Projet_2_Cpp 2> C:/Users/1830542/.jenkins/workspace/MGL7460_Projet_2_Cpp/out/build/cppcheck.xml)
+#                RESULT_VARIABLE cppcheck_result
+#                OUTPUT_VARIABLE cppcheck_output
+#                ERROR_VARIABLE cppcheck_error)
 #message("CPPCHECK RESULT : ${cppcheck_result}")
 #message("CPPCHECK OUTPUT : ${cppcheck_output}")
-message("CPPCHECK ERROR : ${cppcheck_error}")
-file(WRITE C:/Users/1830542/.jenkins/workspace/MGL7460_Projet_2_Cpp/out/build/cppcheck.xml ${cppcheck_error})
+#message("CPPCHECK ERROR : ${cppcheck_error}")
+#file(WRITE C:/Users/1830542/.jenkins/workspace/MGL7460_Projet_2_Cpp/out/build/cppcheck.xml ${cppcheck_error})
+
 
 execute_process(COMMAND C:/Users/1830542/AppData/Local/Programs/Python/Python37/Scripts/cpplint.exe --recursive --output=vs7 --counting=detailed --extensions=cpp,h --exclude=C:/Users/1830542/.jenkins/workspace/MGL7460_Projet_2_Cpp/MGL7460_Projet_2_Cpp/packages C:/Users/1830542/.jenkins/workspace/MGL7460_Projet_2_Cpp/MGL7460_Projet_2_Cpp
                 RESULT_VARIABLE cpplint_result
