@@ -52,6 +52,7 @@ execute_process(COMMAND C:/Program Files/Cppcheck/cppcheck.exe --enable=all --in
 #message("CPPCHECK ERROR : ${cppcheck_error}")
 #file(WRITE C:/Users/1830542/.jenkins/workspace/MGL7460_Projet_2_Cpp/out/build/cppcheck.xml ${cppcheck_error})
 
+
 execute_process(COMMAND C:/Users/1830542/AppData/Local/Programs/Python/Python37/Scripts/cpplint.exe --recursive --output=vs7 --counting=detailed --extensions=cpp,h --exclude=C:/Users/1830542/.jenkins/workspace/MGL7460_Projet_2_Cpp/MGL7460_Projet_2_Cpp/packages C:/Users/1830542/.jenkins/workspace/MGL7460_Projet_2_Cpp/MGL7460_Projet_2_Cpp
                 RESULT_VARIABLE cpplint_result
                 OUTPUT_VARIABLE cpplint_output
