@@ -21,6 +21,6 @@ add_custom_command(
      TARGET ${This}
      COMMENT "Run tests"
      POST_BUILD 
-     WORKING_DIRECTORY ${CMAKE_BINARY_DIR}
-     COMMAND ${CMAKE_CTEST_COMMAND} -C $<CONFIGURATION> -R "^${This}$" --output-on-failures -T Test --no-compress-output
+     WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}
+     COMMAND ${CMAKE_CTEST_COMMAND} --output-on-failures -T Test --no-compress-output
 )
