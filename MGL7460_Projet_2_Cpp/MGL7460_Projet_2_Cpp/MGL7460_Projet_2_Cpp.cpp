@@ -40,7 +40,7 @@ int main() {
     TIME uptime, idletime;
     string uptime_file = "uptime_file";
     string* times = parseFile(uptime_file);
-
+    cout << times[0];
     uptime = parseTime(times[0]);
     idletime = parseTime(times[1]);
 
