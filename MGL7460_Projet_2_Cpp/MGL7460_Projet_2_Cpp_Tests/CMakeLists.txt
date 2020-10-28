@@ -3,7 +3,6 @@ set(Sources
 	test.cpp
 )
 
-message("TEST MESSAGE CMAKE LOOOL")
 add_executable(${This} ${Sources})
 target_link_libraries(${This} PUBLIC
 	gtest
