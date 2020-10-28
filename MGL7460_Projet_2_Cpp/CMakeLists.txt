@@ -36,5 +36,3 @@ set(Sources
 )
 
 add_library(MGL7460_Projet_2_Cpp STATIC ${Sources})
-
-message("TEST MESSAGE CMAKE LOOOL")
