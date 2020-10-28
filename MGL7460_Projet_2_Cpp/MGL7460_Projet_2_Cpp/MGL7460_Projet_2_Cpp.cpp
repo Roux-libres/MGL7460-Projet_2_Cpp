@@ -71,7 +71,7 @@ void displayTime(string timeType, TIME time) {
     auto now = std::chrono::system_clock::now();
     time_t test = chrono::system_clock::to_time_t(now);
     tm tmtest;
-    localtime_s(&tmtest, &test);
+    ::localtime_s(&tmtest, &test);
 
     cout << tmtest.tm_hour << ":"
         << tmtest.tm_min << ":"
