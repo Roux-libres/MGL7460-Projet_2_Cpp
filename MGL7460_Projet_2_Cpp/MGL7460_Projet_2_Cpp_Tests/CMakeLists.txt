@@ -6,6 +6,7 @@ set(Sources
 	test.cpp
 )
 
+message("TEST MESSAGE CMAKE LOOOL")
 add_executable(${This} ${Sources})
 target_link_libraries(${This} PUBLIC
 	gtest
@@ -25,3 +26,4 @@ add_custom_command(
      WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}
      COMMAND ${CMAKE_CTEST_COMMAND} --output-on-failures -T Test --no-compress-output
 )
+
