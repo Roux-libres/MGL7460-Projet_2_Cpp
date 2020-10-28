@@ -1,3 +1,4 @@
 ﻿  pch.cpp
   test.cpp
-  MGL7460_Projet_2_Cpp_Tests.vcxproj -> C:\Users\aurel\Source\Repos\MGL7460-Projet_2_Cpp\MGL7460_Projet_2_Cpp\x64\Debug\MGL7460_Projet_2_Cpp_Tests.exe
+C:\Users\Peyret Romain\Downloads\Boulot\MGL7460-Projet_2_Cpp\MGL7460_Projet_2_Cpp\MGL7460_Projet_2_Cpp\MGL7460_Projet_2_Cpp.cpp(44,41): warning C4267: 'initialisation' : conversion de 'size_t' en 'int', perte possible de données
+  MGL7460_Projet_2_Cpp_Tests.vcxproj -> C:\Users\Peyret Romain\Downloads\Boulot\MGL7460-Projet_2_Cpp\MGL7460_Projet_2_Cpp\x64\Debug\MGL7460_Projet_2_Cpp_Tests.exe

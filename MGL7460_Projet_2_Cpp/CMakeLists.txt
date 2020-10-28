@@ -1,9 +1,9 @@
 ﻿# CMakeList.txt : fichier projet CMake de niveau supérieur, effectuez une configuration globale
 # et incluez les sous-projets ici.
 #
-cmake_minimum_required (VERSION 3.8)
+cmake_minimum_required(VERSION 3.8)
 
-project ("MGL7460_Projet_2_Cpp")
+project("MGL7460_Projet_2_Cpp")
 
 configure_file(CMakeLists.txt.in googletest-download/CMakeLists.txt)
 execute_process(COMMAND ${CMAKE_COMMAND} -G "${CMAKE_GENERATOR}" .
