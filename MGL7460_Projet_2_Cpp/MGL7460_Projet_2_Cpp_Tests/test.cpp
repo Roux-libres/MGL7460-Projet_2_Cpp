@@ -34,20 +34,25 @@ TEST(TestReadFile, ReadEmptyFile) {
 }
 
 TEST(TestParseFile, ParseFile) {
-	parseFile("../test_files/uptime_file.txt");
-	// TODO
-	EXPECT_EQ(1, 1);
-	EXPECT_TRUE(true);
+	string* expectedResult = new string[2];
+	expectedResult[0] = "15005117.05";
+	expectedResult[1] = "6945200.26";
+
+	string* actualResult = new string[2];
+	actualResult = parseFile("../test_files/uptime_file.txt");
+
+	EXPECT_EQ(expectedResult, actualResult);
 }
 
 TEST(TestParseTime, ParseTime) {
-	// TODO
-	EXPECT_EQ(1, 1);
-	EXPECT_TRUE(true);
-}
+	TIME expectedResult;
+	expectedResult.days = 173;
+	expectedResult.hours = 16;
+	expectedResult.minutes = 5;
 
-TEST(TestDisplayTime, DisplayTime) {
-	// TODO
-	EXPECT_EQ(1, 1);
-	EXPECT_TRUE(true);
+	TIME actualResult = parseTime("15005117.05");
+
+	EXPECT_EQ(expectedResult.days, actualResult.days);
+	EXPECT_EQ(expectedResult.hours, actualResult.hours);
+	EXPECT_EQ(expectedResult.minutes, actualResult.minutes);
 }
