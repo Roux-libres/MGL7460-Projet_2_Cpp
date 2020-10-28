@@ -72,13 +72,35 @@ void displayTime(string timeType, TIME time) {
     time_t test = chrono::system_clock::to_time_t(now);
     tm tmtest;
     localtime_s(&tmtest, &test);
-    cout << tmtest.tm_hour<< ":"
+
+    cout << tmtest.tm_hour << ":"
         << tmtest.tm_min << ":"
-        << tmtest.tm_sec << timeType
-        << "day(s) " << time.days
-        << " hour(s) " << time.hours
-        << " minute(s) " << time.minutes
-        << endl;
+        << tmtest.tm_sec << timeType;
+
+    if (time.days == 0) {
+        if (time.hours == 0) {
+            cout << time.minutes << " min" << endl;
+        }
+        else {
+            cout << time.hours << ":" << ((time.minutes < 10) ? "0" : "") << time.minutes << endl;
+        }
+    }
+    else if (time.days == 1) {
+        if (time.hours == 0) {
+            cout << time.days << " day, " << time.minutes << " min" << endl;
+        }
+        else {
+            cout << time.days << " day, " << time.hours << ":" << ((time.minutes < 10) ? "0" : "") << time.minutes << endl;
+        }
+    }
+    else {
+        if (time.hours == 0) {
+            cout << time.days << " days, " << time.minutes << " min" << endl;
+        }
+        else {
+            cout << time.days << " days, " << time.hours << ":" << ((time.minutes < 10) ? "0" : "") << time.minutes << endl;
+        }
+    }
 }
 
 int main() {
