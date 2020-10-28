@@ -1,1 +1,2 @@
 C:\Users\Peyret Romain\Downloads\Boulot\MGL7460-Projet_2_Cpp\MGL7460_Projet_2_Cpp\MGL7460_Projet_2_Cpp_Tests\x64\Debug\MGL7460_Projet_2_Cpp_Tests.vcxproj.CopyComplete
+C:\Users\aurel\Source\Repos\MGL7460-Projet_2_Cpp\MGL7460_Projet_2_Cpp\MGL7460_Projet_2_Cpp_Tests\x64\Debug\MGL7460_Projet_2_Cpp_Tests.vcxproj.CopyComplete
