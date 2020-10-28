@@ -1,8 +1,12 @@
+#pragma warning(disable : 4996)
+
 #include <chrono>
 #include <ctime>
 #include <fstream>
+#include <iomanip>
 #include <iostream>
 #include <string>
+#include <time.h>
 #include <vector>
 
 using namespace std;
@@ -70,12 +74,11 @@ TIME parseTime(string time_str) {
 void displayTime(string timeType, TIME time) {
     auto now = std::chrono::system_clock::now();
     time_t test = chrono::system_clock::to_time_t(now);
-    tm tmtest;
-    ::localtime_s(&tmtest, &test);
+    tm tmtest = *localtime(&test);
 
-    cout << tmtest.tm_hour << ":"
-        << tmtest.tm_min << ":"
-        << tmtest.tm_sec << timeType;
+    cout << setw(2) << setfill('0') << tmtest.tm_hour << ":"
+        << setw(2) << setfill('0') << tmtest.tm_min << ":"
+        << setw(2) << setfill('0') << tmtest.tm_sec << timeType;
 
     if (time.days == 0) {
         if (time.hours == 0) {
