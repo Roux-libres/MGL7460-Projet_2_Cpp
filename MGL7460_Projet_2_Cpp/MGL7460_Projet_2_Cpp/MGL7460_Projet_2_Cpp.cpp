@@ -76,34 +76,20 @@ void displayTime(string timeType, TIME time) {
     time_t test = chrono::system_clock::to_time_t(now);
     tm tmtest = *localtime(&test);
 
-    cout << setw(2) << setfill('0') << tmtest.tm_hour << ":"
-        << setw(2) << setfill('0') << tmtest.tm_min << ":"
-        << setw(2) << setfill('0') << tmtest.tm_sec << timeType;
+    cout << setw(2) << setfill('0') << tmtest.tm_hour << ":" << setw(2) << setfill('0') << tmtest.tm_min << ":" << setw(2) << setfill('0') << tmtest.tm_sec << timeType;
 
-    if (time.days == 0) {
-        if (time.hours == 0) {
-            cout << time.minutes << " min" << endl;
-        }
-        else {
-            cout << time.hours << ":" << ((time.minutes < 10) ? "0" : "") << time.minutes << endl;
-        }
+    if (time.days == 1) {
+        cout << "1 day";
     }
-    else if (time.days == 1) {
-        if (time.hours == 0) {
-            cout << time.days << " day, " << time.minutes << " min" << endl;
-        }
-        else {
-            cout << time.days << " day, " << time.hours << ":" << ((time.minutes < 10) ? "0" : "") << time.minutes << endl;
-        }
+    else if (time.days > 1) {
+        cout << time.days << " days, ";
     }
-    else {
-        if (time.hours == 0) {
-            cout << time.days << " days, " << time.minutes << " min" << endl;
-        }
-        else {
-            cout << time.days << " days, " << time.hours << ":" << ((time.minutes < 10) ? "0" : "") << time.minutes << endl;
-        }
+
+    if (time.hours > 0) {
+        cout << time.hours << ":";
     }
+
+    cout << setw(2) << setfill('0') << time.minutes << " min" << endl;
 }
 
 int main() {
