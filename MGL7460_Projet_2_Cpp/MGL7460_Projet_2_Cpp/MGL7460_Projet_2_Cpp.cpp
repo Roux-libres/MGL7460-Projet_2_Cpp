@@ -89,7 +89,7 @@ void displayTime(string timeType, TIME time) {
         cout << time.hours << ":";
     }
 
-    cout << setw(2) << setfill('0') << time.minutes << " min" << endl;
+    cout << setw(2) << setfill('0') << time.minutes << ((time.hours == 0) ? " min" : "") << endl;
 }
 
 int main() {
