@@ -1,13 +1,10 @@
 #pragma warning(disable : 4996)
 
 #include <chrono>
-#include <ctime>
 #include <fstream>
 #include <iomanip>
 #include <iostream>
 #include <string>
-#include <time.h>
-#include <vector>
 
 using namespace std;
 
