@@ -66,7 +66,6 @@ TIME parseTime(string time_str) {
     time = time % 3600;
 
     result.minutes = time / 60;
-    time = time % 60;
 
     return result;
 }
